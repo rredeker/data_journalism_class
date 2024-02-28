@@ -314,8 +314,13 @@ Questions:
 
 ```         
 1: Who is making $230,504 as a reporter???   
+> MediaSalary %>%
++     filter(Salary == 230504)
+Senior Reporter ProPublica
 2: Make a table for editors, figure out medians.   
+Median= 50625
 3: Find highest paid editor. Resent them.   
+
 4: Make a table for any position involving data  
 ```
 
@@ -401,23 +406,29 @@ How to conduct filter queries from a dataset
 ```
 
 ```{r}
+NYT <- subset(MediaBucks, COMPANY=="NewYorkTimes") 
+summary(NYT$Salary)
 #your answer here
 ```
-
+The median salary of New York Times employees is $52,000. 
 ```         
   2: Identify title, gender and race of the highest paid position at NYT  
-```
+```The highest paid position at NYT is an Executive Editor for news. The person is Black, but their gender is not specified. 
 
 ```{r}
+NYT <- subset(MediaBucks, COMPANY=="NewYorkTimes") 
+summary(NYT$Salary)
 #your answer here
 ```
 
 ```         
 3: Search for Bloomberg,  check median salary, compare to NYT results above.
-```
+```Bloomberg's median salary is $50,350. This looks very similar to New York Times, whose median salary is $52,000. 
 
 ```{r}
 #your answer here
+Bloom <- subset(MediaBucks, COMPANY=="Bloomberg") 
+summary(Bloom$Salary)
 
 ```
 
